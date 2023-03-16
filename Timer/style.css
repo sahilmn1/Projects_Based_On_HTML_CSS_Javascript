@@ -1,0 +1,66 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 100%;
+    height: 1000px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg");
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background: #433c3c9a;
+    margin: 0px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&family=Tilt+Warp&display=swap');
+.party{
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+.input{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+  
+    margin-left: 30px;
+margin: 100px auto;
+    color: white;
+}
+input{
+    
+    width:90px;
+    height: 50px;
+    margin-left: 30px;
+    border-radius: 5px;
+    display:block;
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    font-weight: bolder;
+    
+}
+label{
+    color: rgb(255, 255, 255);
+    font-family: vardana;
+}
+
+#end-date{
+    font-size: 50px;
+}
+#header{
+    font-size: 60px;
+    color: greenyellow;
+    background: #1f2a75a0;
+}
