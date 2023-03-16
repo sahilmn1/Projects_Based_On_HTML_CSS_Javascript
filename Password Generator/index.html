@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <div class="boder">
+        <div >
+            <input type="textbox"  readonly name="display" id="input-boder">
+        </div>
+
+        <div class="input-border">
+            <label for="" class="label">Size of Password</label>
+            <input  id="total-char" type="number" min="4" max="32" value="10">
+        </div>
+
+        <div class="input-border">
+            <label for="" class="label">UpperCase letter</label>
+            <input type="checkbox" checked class="last" id="upper">
+
+        </div>
+        <div class="input-border">
+            <label for="" class="label">LowerCase</label>
+            <input type="checkbox" class="last" id="lower">
+        </div>
+
+        <div class="input-border">
+            <label for="" class="label">Speacial character</label>
+            <input type="checkbox" class="last" id="specialchar">
+        </div>
+
+        <div class="input-border">
+            <label for="" class="label"> Numeric</label>
+            <input type="checkbox" class="last" id="numeric">
+        </div>
+        <div>
+
+            <button  id="btnn" class="btn" type="submit">SUBMIT</button>
+        </div>
+    </div>
+</body>
+<script src="javascript.js"></script>
+</html>
