@@ -1,0 +1,64 @@
+body{
+    background: #139cc981;
+}
+
+
+.main{
+    width: 100%;
+    height: 100vh;
+    
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+
+.note{
+    width:48%;
+    height:50%;
+    background: rgb(254, 254, 254);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 2%; 
+    
+}
+#btn{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background: #000;
+    color: white;
+    padding: 5px;
+    border: 0px;
+    outline: 0;
+    border-radius: 10px;
+}
+
+.tool{
+    width:100%;
+    height:30px;
+   color: white;
+    background: #050404;
+    display: flex;
+    justify-content: end;
+    border-radius: 2px;
+
+}
+.tool i{
+    padding: 5px;
+    cursor: pointer ;
+    
+}
+.textarea{
+width: 100%;
+height: 100%;
+padding: 10px;
+border: 0px;
+outline: 0;
+resize: none;
+}
+.textarea:hover{
+    outline: 0;
+    border: 0px;
+}
