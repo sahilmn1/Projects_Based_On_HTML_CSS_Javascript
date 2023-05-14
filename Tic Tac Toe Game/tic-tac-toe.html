@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic-Tac-Toe</title>
+    <style>
+   
+    .container {
+      width: 70%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    .cell {
+
+      border: 2px solid black;
+      border-color: black;
+      width: 93%;
+      height: 5rem;
+      padding: 20px;
+      text-align: center;
+      font-size: 48px;
+      background-color: #b8477f;
+      
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cell:hover {
+      background-color: #e0e0e0;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+  </head>
+  <body>
+
+    <div>
+      <center>
+        <h1>Tic Tac Toe Game</h1>
+      </center>
+
+    </div>
+
+    <div class="container">
+      
+        <div class="cell" data-position="0"></div>
+        <div class="cell" data-position="1"></div>
+        <div class="cell" data-position="2"></div>
+        <div class="cell" data-position="3"></div>
+        <div class="cell" data-position="4"></div>
+        <div class="cell" data-position="5"></div>
+        <div class="cell" data-position="6"></div>
+        <div class="cell" data-position="7"></div>
+        <div class="cell" data-position="8"></div>
+     
+    </div>
+
+    <script>
+    // JavaScript code goes here
+    let board = ['', '', '', '', '', '', '', '', ''];
+    let currentPlayer = 'X';
+
+    function handleMove(position) {
+      if (board[position] === '') {
+        board[position] = currentPlayer;
+        if (checkWin(currentPlayer)) {
+          alert('Player ' + currentPlayer + ' wins!');
+          resetBoard();
+          return;
+        }
+        if (board.every(cell => cell !== '')) {
+          alert('Game over! It\'s a draw.');
+          resetBoard();
+          return;
+        }
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        updateDisplay();
+      }
+    }
+
+    function checkWin(player) {
+      const winCombinations = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6] // Diagonals
+      ];
+
+      return winCombinations.some(combination => {
+        return combination.every(position => board[position] === player);
+      });
+    }
+
+    function resetBoard() {
+      board = ['', '', '', '', '', '', '', '', ''];
+      currentPlayer = 'X';
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const cells = document.querySelectorAll('.cell');
+
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].textContent = board[i];
+      }
+    }
+
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+      cell.addEventListener('click', () => {
+        const position = parseInt(cell.getAttribute('data-position'));
+        handleMove(position);
+      });
+    });
+
+    updateDisplay();
+  </script>
+  </body>
+</html>
